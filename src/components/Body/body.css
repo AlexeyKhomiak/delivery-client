@@ -45,6 +45,10 @@
   text-decoration: none;
 }
 
+.shop-wrap-prod {
+  height: 80vh;
+}
+
 .shop-wrap .shop-content {
   border: 2px solid #666;
   border-radius: 5px;
@@ -52,7 +56,6 @@
   flex-direction: column;
   grid-column: span 3;
   padding: 25px;
-  height: 90vh;
   overflow-y: scroll;
 }
 

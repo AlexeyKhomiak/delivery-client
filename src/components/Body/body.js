@@ -5,7 +5,7 @@ import "./body.css";
 
 const Body = ({ list, shops, handleClick, handleClickShop }) => {
   return (
-    <div className="shop-wrap">
+    <div className="shop-wrap shop-wrap-prod">
       <div className="shop-menu">
         <div className="header">Shops:</div>
         <ul>
@@ -14,7 +14,7 @@ const Body = ({ list, shops, handleClick, handleClickShop }) => {
           ))}
         </ul>
       </div>
-      <div className="shop-content">
+      <div className="shop-content shop-wrap-prod">
         <div className="product-grid">
           {list.map((item) => (
             <Cards key={item.id} item={item} handleClick={handleClick} />
