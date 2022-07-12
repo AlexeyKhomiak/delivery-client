@@ -2,16 +2,23 @@ import React, { useState, useEffect } from "react";
 import "./cart.css";
 
 
-const Cart = ({ cart, setCart, handleChange }) => {
+const Cart = ({ cart, setCart, handleChange, saveOrder }) => {
   const [price, setPrice] = useState(0);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
 
-const displayInfo = () => {
-  console.log(name+email+phone+address+"-"+cart[0].id+"-"+cart[0].amount);
-}
+  const saveData = () => {
+    if (name === "" || email === "" || phone === "" || address === "") {
+      alert("Форма заказа не заполнена!");
+    } else if (cart.length === 0) {
+      alert("Товар не добавлен!");
+    } else {
+      saveOrder(name, email, phone, address, price, cart);
+      console.log(name + " email=" + email + " phone=" + phone + " address=" + address + " price=" + price + " id=" + cart[0].id + " amount=" + cart[0].amount);
+    }
+  }
 
   const handleRemove = (id) => {
     const arr = cart.filter((item) => item.id !== id);
@@ -35,13 +42,13 @@ const displayInfo = () => {
         <div className="shop-menu">
           <div className="form">
             <label>Name:</label>
-            <input type="text" onChange={(event) => {setName(event.target.value)}}/>
+            <input type="text" onChange={(event) => { setName(event.target.value) }} />
             <label>Email:</label>
-            <input type="text" onChange={(event) => {setEmail(event.target.value)}}/>
+            <input type="text" onChange={(event) => { setEmail(event.target.value) }} />
             <label>Phone:</label>
-            <input type="text" onChange={(event) => {setPhone(event.target.value)}}/>
+            <input type="text" onChange={(event) => { setPhone(event.target.value) }} />
             <label>Address:</label>
-            <input type="text" onChange={(event) => {setAddress(event.target.value)}}/>
+            <input type="text" onChange={(event) => { setAddress(event.target.value) }} />
           </div>
         </div>
         <div className="shop-content">
@@ -77,7 +84,7 @@ const displayInfo = () => {
           </div>
         </div>
         <div className="submit">
-          <button onClick={displayInfo}>Submit</button>
+          <button onClick={saveData}>Submit</button>
         </div>
       </div>
     </div>
