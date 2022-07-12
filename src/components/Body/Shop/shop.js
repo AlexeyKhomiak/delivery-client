@@ -1,11 +1,10 @@
 import React from "react";
 import "./shop.css";
 
-const Shop = ({ item, handleClickShop }) => {
-  const { Name } = item;
+const Shop = ({ shop, handleClickShop }) => {
   return (
     <li>
-      <a href="#" onClick={() => handleClickShop(item)}>{Name}</a>
+      <a href="#" onClick={() => handleClickShop(shop.id)}>{shop.name}</a>
     </li>
   );
 };
