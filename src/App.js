@@ -49,7 +49,7 @@ const App = () => {
         "cart": cart
       })
       .then(res => {
-        console.log(res.data);
+        //console.log(res.data);
         alert("Заказ оформлен!");
         setCart([]);
       })
