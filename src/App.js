@@ -39,7 +39,7 @@ const App = () => {
   };
 
   const saveOrder = (name, email, phone, address, sum, cart) => {
-    axios.post(`https://radiant-depths-71519.herokuapp.com/api/order/`,
+    axios.post("https://cors-anywhere.herokuapp.com/https://radiant-depths-71519.herokuapp.com/api/order/",
       {
         "name": name,
         "email": email,
@@ -69,7 +69,7 @@ const App = () => {
       });
 
     if (products.length === 0) {
-      axios.get(`https://radiant-depths-71519.herokuapp.com/api/products/`)
+      axios.get("https://radiant-depths-71519.herokuapp.com/api/products/")
         .then(res => {
           //console.log(res.data);
           setProducts(res.data);
