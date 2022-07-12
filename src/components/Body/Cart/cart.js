@@ -16,7 +16,6 @@ const Cart = ({ cart, setCart, handleChange, saveOrder }) => {
       alert("Товар не добавлен!");
     } else {
       saveOrder(name, email, phone, address, price, cart);
-      console.log(name + " email=" + email + " phone=" + phone + " address=" + address + " price=" + price + " id=" + cart[0].id + " amount=" + cart[0].amount);
     }
   }
 
